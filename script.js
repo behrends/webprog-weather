@@ -11,17 +11,17 @@ TODOS:
   - Spinner o.ä. beim Laden anzeigen
 - use strict?
 */
-const add_btn = document.getElementById('add_btn');
-const search_btn = document.getElementById('search_btn');
-const search_input = document.getElementById('search_input');
-const selected_location = document.getElementById(
-  'selected_location'
+const add_btn = document.querySelector('#add_btn');
+const search_btn = document.querySelector('#search_btn');
+const search_input = document.querySelector('#search_input');
+const selected_location = document.querySelector(
+  '#selected_location'
 );
 const display_radio = document.querySelectorAll(
   'input[name="display_mode"]'
 );
-const weather_tiles = document.getElementById('weather_tiles');
-const weather_table = document.getElementById('weather_table');
+const weather_tiles = document.querySelector('#weather_tiles');
+const weather_table = document.querySelector('#weather_table');
 
 const weatherURL = `https://api.open-meteo.com/v1/forecast?current_weather=true`;
 const geoURL = `https://geocoding-api.open-meteo.com/v1/search?name=`;
