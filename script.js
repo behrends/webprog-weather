@@ -1,7 +1,10 @@
 /* 
 TODOS: 
 - Ort löschen: in Tabelle UND Kacheln --> Code zusammenfassen
-- doppelte Orte vermeiden? (--> storage, view, drop down der Beispiel-Orte)
+- doppelte Orte vermeiden?
+  - im Speicher und View
+  - Entferne aus Drop-Down nach Hinzufügen
+  - Füge zum Drop-Down nach Entfernen hinzu 
 - View:
   - Detail-Ansicht
   - Kachel entsprechend Temperatur einfärben
@@ -315,6 +318,7 @@ weatherCodes.set(99, {
 
 function setupLocationList() {
   locations.forEach((location, index) => {
+    if (locationsList.some((l) => l.name === location.name)) return;
     const option = document.createElement('option');
     option.innerHTML = location.name;
     option.setAttribute('value', index);
@@ -335,6 +339,6 @@ function setupLocationView() {
   });
 }
 
-setupLocationList();
 loadLocations();
 setupLocationView();
+setupLocationList();
